@@ -10,7 +10,7 @@ import { api } from "src/services.js"
 
 export default {
   name: 'App',
-  created() {
+  mounted() {
 
     if(window.localStorage.token){
         console.log(window.localStorage.refreshToken)
@@ -27,6 +27,8 @@ export default {
           this.$store.dispatch("deslogarUsuario")
           this.$router.push({name: "login"})
         })
+      } else {
+        this.$router.push({name: "login"})
       }
   }
 }
