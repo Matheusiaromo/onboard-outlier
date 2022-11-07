@@ -1,1 +1,84 @@
 /* app global css */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0 1000px  #191916 inset !important;
+}
+
+
+.q-field__control:before, .q-field__control:after {
+  z-index: 1;
+}
+
+.q-field__prepend {
+  padding-left: 12px;
+}
+
+html, body {
+  background: #191916;
+  min-height: calc(100vh + 10px);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #424242;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #7A7D70;
+  border-radius: 10px;
+}
+
+.q-header-card {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.my-notify {
+  background: #000;
+  border-radius: 8px;
+}
+
+.q_notification {
+  background: #000;
+}
+
+.q-notification__progress {
+  background: #b77e45;
+  opacity: 1;
+  box-shadow: 0px 0px 24px #B77E45;
+  border-radius: 8px;
+}
+
+.q-img__content > div {
+  background: none;
+  color: #fff;
+}
+
+.q-img__content {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .6) 100%);
+}
+
+@media (min-width: 600px) {
+
+  .q-dialog__inner--minimized > div {
+      max-width: 800px;
+  }
+
+}

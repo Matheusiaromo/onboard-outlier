@@ -3,8 +3,11 @@ const routes = [
   {
     path: '/',
     component: () => import('src/layouts/LogadoLayout.vue'),
+    redirect: '/onboarding',
     children: [
-      { path: '', name: "index", meta: { login: true }, component: () => import('src/pages/IndexPage.vue') }
+      { path: 'onboarding', name: "onboarding", meta: { login: true }, component: () => import('src/pages/OnboardingPage.vue') },
+      { path: 'team', name: "team", meta: { login: true }, component: () => import('src/pages/TeamPage.vue') },
+      { path: 'parttime', name: "parttime", meta: { login: true }, component: () => import('src/pages/PartTimePage.vue') }
     ]
   },
   {

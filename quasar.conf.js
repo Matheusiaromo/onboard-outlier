@@ -37,7 +37,7 @@ module.exports = function (/* ctx */) {
       // 'fontawesome-v6',
       // 'eva-icons',
       // 'themify',
-      // 'line-awesome',
+      'line-awesome',
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
 
       'roboto-font', // optional, you are not bound to it
@@ -80,7 +80,26 @@ module.exports = function (/* ctx */) {
     framework: {
       iconSet: 'material-icons', // Quasar icon set
       lang: 'en-us', // Quasar language pack
-      config: {},
+      config: {
+        brand: {
+          primary: '#b77e45',
+          secondary: '#44423c',
+          accent: '#9C27B0',
+
+          dark: '#191916',
+          'dark-page': '#121212',
+
+          positive: '#21BA45',
+          negative: '#C10015',
+          info: '#31CCEC',
+          warning: '#F2C037'
+        },
+        notify: {
+          classes: "my-notify",
+          progress: true,
+
+        }
+      },
 
       // Possible values for "importStrategy":
       // * 'auto' - (DEFAULT) Auto-import needed Quasar components & directives
@@ -97,7 +116,8 @@ module.exports = function (/* ctx */) {
       // Quasar plugins
       plugins: [
         'Notify'
-      ]
+      ],
+
     },
 
     // animations: 'all', // --- includes all animations

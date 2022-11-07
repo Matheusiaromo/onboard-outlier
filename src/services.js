@@ -25,8 +25,11 @@ export const api = {
       if(coluna){
         return axiosInstance.get(`${endpoint}?filter[${field}][_eq]=${value}&fields=id,titulo,imagem`)
       } else {
-        return axiosInstance.get(`${endpoint}?filter[${field}][_eq]=${value}&fields=id,nome,avatar`)
+        return axiosInstance.get(`${endpoint}?filter[${field}][_eq]=${value}&fields=id,first_name,last_name,avatar`)
       }
+    },
+    getFilter(endpoint, query){
+      return axiosInstance.get(`${endpoint}${query}`)
     },
     getSingleUser(endpoint, query){
       return axiosInstance.get(`${endpoint}${query}`)
