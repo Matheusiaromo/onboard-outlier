@@ -182,11 +182,17 @@
                       <span class="text-h6">Área</span>
                       <p>{{usuario.area}}</p>
                   </div>
-
-
+                  <div class="col-12 col-md-6 gdc">
+                      <span class="text-h6">Data de nascimento</span>
+                      <p>{{usuario.data_nascimento}}</p>
+                  </div>
                   <div class="col-12 col-md-6 gdc">
                       <span class="text-h6">E-mail empresarial</span>
                       <p>{{usuario.email_empresarial}}</p>
+                  </div>
+                  <div class="col-12 col-md-6 gdc">
+                      <span class="text-h6">Slack</span>
+                      <p>{{usuario.slack}}</p>
                   </div>
 
                   <!-- <div class="col-12 col-md-6 gdc">

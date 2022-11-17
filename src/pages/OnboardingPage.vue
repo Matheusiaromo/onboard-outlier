@@ -10,23 +10,19 @@
       </div>
 
       <div class="col-12 col-sm-2" >
-          <ColunaAtividade colTitulo="Primeiros Passos" :atividades="atividadeC2" @open-modal-atividade="showAtividade" />
+          <ColunaAtividade colTitulo="Missão, Visão e Código" :atividades="atividadeC2" @open-modal-atividade="showAtividade" />
       </div>
 
       <div class="col-12 col-sm-2" >
-        <ColunaAtividade colTitulo="Suas Ferramentas" :atividades="atividadeC3" @open-modal-atividade="showAtividade" />
+        <ColunaAtividade colTitulo="Valores" :atividades="atividadeC3" @open-modal-atividade="showAtividade" />
       </div>
 
       <div class="col-12 col-sm-2" >
-        <ColunaAtividade colTitulo="Missão" :atividades="atividadeC4" @open-modal-atividade="showAtividade" />
+        <ColunaAtividade colTitulo="Primeiros Passos" :atividades="atividadeC4" @open-modal-atividade="showAtividade" />
       </div>
 
       <div class="col-12 col-sm-2" >
-        <ColunaAtividade colTitulo="Visão" :atividades="atividadeC5" @open-modal-atividade="showAtividade" />
-      </div>
-
-      <div class="col-12 col-sm-2" >
-        <ColunaAtividade colTitulo="Valores" :atividades="atividadeC6" @open-modal-atividade="showAtividade" />
+        <ColunaAtividade colTitulo="Suas Ferramentas" :atividades="atividadeC5" @open-modal-atividade="showAtividade" />
       </div>
 
    </div>
@@ -57,7 +53,6 @@ export default {
       atividadeC3: [],
       atividadeC4: [],
       atividadeC5: [],
-      atividadeC6: [],
       showModalAtividade: false,
       atividadeDetalhes: [],
     }
@@ -98,13 +93,6 @@ export default {
         }
       )
     },
-    setAtividadeC6(){
-      api.getFiltered("/items/atividades", "coluna", "coluna6", true).then(
-        response => {
-          this.atividadeC6 = response.data.data
-        }
-      )
-    },
     showAtividade(id){
       api.get("/items/atividades/" + id).then(
         response => {
@@ -125,7 +113,6 @@ export default {
     this.setAtividadeC3()
     this.setAtividadeC4()
     this.setAtividadeC5()
-    this.setAtividadeC6()
   }
 }
 </script>
