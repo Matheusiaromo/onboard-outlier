@@ -178,6 +178,8 @@ export default {
     padding: 20px;
     gap: 20px;
     max-height: 70vh;
+    width: 100%;
+    max-width: 100%;
   }
 
   .close-modal-filmes {
