@@ -13,7 +13,6 @@ export default {
   mounted() {
 
     if(window.localStorage.token){
-        console.log(window.localStorage.refreshToken)
         api.refresh(window.localStorage.refreshToken).then(
           response => {
             window.localStorage.token = `Bearer ${response.data.data.access_token}`

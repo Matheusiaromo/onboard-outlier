@@ -101,7 +101,7 @@
                       <p>{{usuario.descricao_servico}}</p>
                   </div>
                   <div class="col-12 col-md-6 gdc">
-                      <span class="text-h6">Área</span>
+                      <span class="text-h6 area-input">Área</span>
                       <p>{{usuario.area}}</p>
                   </div>
                   <div class="col-12 col-md-6 gdc">
@@ -179,7 +179,7 @@
                       <p>{{usuario.descricao_servico}}</p>
                   </div>
                   <div class="col-12 col-md-6 gdc">
-                      <span class="text-h6">Área</span>
+                      <span class="text-h6 area-input">Área</span>
                       <p>{{usuario.area}}</p>
                   </div>
                   <div class="col-12 col-md-6 gdc">
@@ -322,6 +322,10 @@ export default {
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
+}
+
+.area-input {
+  text-transform: capitalize;
 }
 
 </style>

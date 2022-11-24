@@ -3,12 +3,20 @@
 
     <img src="../assets/bg-pages.png" alt="" class="bg-blur">
 
-    <div class="row justify-center" style="margin: 0 auto; max-width: 1280px">
-
-      <div class="col-12 col-sm-2">
-          <ColunaFilme colTitulo="Indicações de filmes" :filmes="filmes" @open-modal-filme="showFilmes" />
+   <div class="col justify-center">
+      <span class="titulo-filmes">
+        Filmes
+      </span>
+      <div class="container-filmes">
+        <div class="box-filmes" v-for="filme, i in filmes" :key="i">
+            <q-img
+              class="img-card-filme"
+              placeholder-src="../assets/placeholder-cards.png"
+              :src="'https://app.omatheusdev.com/assets/' + filme.imagem"
+               @click="showFilmes(filme.id)"
+              ></q-img>
+        </div>
       </div>
-
    </div>
 
 
@@ -24,7 +32,6 @@
 <script>
 
 import ModalFilmes from "src/components/ModalFilmes.vue"
-import ColunaFilme from "src/components/ColunaFilme.vue"
 
 import { api } from "src/services"
 
@@ -49,6 +56,7 @@ export default {
     showFilmes(id){
       api.get("/items/filmes/" + id).then(
         response => {
+          console.log(response.data.data)
           this.filmesDetalhes = response.data.data
           this.showModalFilmes = true
 
@@ -58,7 +66,6 @@ export default {
   },
   components: {
     ModalFilmes,
-    ColunaFilme
   },
   created() {
     this.setFilmes()
@@ -67,6 +74,16 @@ export default {
 </script>
 
 <style scoped>
+
+.titulo-filmes {
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 20px;
+  display: block;
+  text-align: left;
+  line-height: 33px;
+}
 
 .bg-blur {
   width: 100%;
@@ -79,25 +96,64 @@ export default {
   filter: blur(20px);
 }
 
-.q-img__content > div{
-  background: #000 !important;
-}
-
 #onboarding {
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 100px;
 
   padding-top: calc(106px + 40px);
-
-/*   background-image: url("../assets/bg-main.png");
-  background-position: center;
-  background-size: cover; */
 }
 
-#onboarding .row {
-  flex-wrap: nowrap;
-  gap: 20px;
+ #onboarding .col {
+   margin: 0 auto;
+   max-width: 1531px;
+   justify-content: center;
+ }
+
+ #onboarding .container-filmes {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 20px;
+ }
+
+.box-filmes {
+  min-width: 100px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.img-card-filme {
+  aspect-ratio: 9/13;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  transition: .5s;
+}
+
+.img-card-filme:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: .5s;
+}
+
+@media (max-width: 1440px) {
+  #onboarding .row {
+    max-width: 1168px;
+  }
+
+  #onboarding .container-filmes {
+   grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 1280px) {
+  #onboarding .row {
+    max-width: 995px;
+  }
+
+   #onboarding .container-filmes {
+   grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 
@@ -106,8 +162,15 @@ export default {
     width: inherit;
   }
 
-  #onboarding .row {
-    flex-wrap: wrap;
+  #onboarding .container-filmes {
+   grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 500px){
+  #onboarding .container-filmes {
+   grid-template-columns: repeat(2, 1fr);
+   gap: 20px;
   }
 }
 
