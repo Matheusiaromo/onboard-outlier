@@ -270,6 +270,10 @@ export default {
   gap: 20px;
 }
 
+.q-card__section--vert {
+  padding: 32px;
+}
+
 .gdc span{
   color: #191916;
   font-size: 16px;
@@ -326,6 +330,12 @@ export default {
 
 .area-input {
   text-transform: capitalize;
+}
+
+@media (max-width: 768px){
+  .q-card__section--vert {
+  padding: 20px;
+}
 }
 
 </style>

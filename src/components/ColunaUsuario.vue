@@ -7,7 +7,7 @@
 
          <div class="row q-col-gutter-md coluna-mobile ">
           <div class="col-10 col-md-12" v-for="(usuario, index) in usuarios" :key="index">
-           <q-card style="background: #191916;border-radius: 8px"  class="my-card" @click="$emit('open-modal-usuario', usuario.id)">
+           <q-card style="background: #191916;border-radius: 8px;overflow: hidden"  class="my-card" @click="$emit('open-modal-usuario', usuario.id)">
 
               <q-img
               class="img-card"
@@ -60,11 +60,14 @@ export default {
 
 .img-card {
   aspect-ratio: 16 / 9;
-  object-position: center;
+  width: 100%;
+  transition: .5s;
 }
 
-.my-card:hover {
+.img-card:hover {
   cursor: pointer;
+  transform: scale(1.1);
+  transition: .5s;
 }
 
 @media (max-width: 768px){

@@ -7,7 +7,7 @@
 
         <div class="row q-col-gutter-md coluna-mobile" >
           <div class="col-10 col-md-12" v-for="(atividade, index) in atividades" :key="index">
-            <q-card style="background: #191916;border-radius: 8px"  class="my-card" @click="$emit('open-modal-atividade', atividade.id)">
+            <q-card style="background: #191916;border-radius: 8px;overflow:hidden;"  class="my-card" @click="$emit('open-modal-atividade', atividade.id)">
 
               <q-img class="img-card"
               placeholder-src="../assets/placeholder-cards.png"
@@ -57,11 +57,16 @@ export default {
 
 .img-card {
   aspect-ratio: 16 / 9;
+  width: 100%;
+  transition: .5s;
 }
 
-.my-card:hover {
+.img-card:hover {
   cursor: pointer;
+  transform: scale(1.1);
+  transition: .5s;
 }
+
 
 @media (max-width: 768px){
 

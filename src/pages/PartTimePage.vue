@@ -1,12 +1,24 @@
 <template>
-  <q-page id="team" style="overflow-x: hidden;">
+  <q-page id="partime" style="overflow-x: hidden;">
 
     <img src="../assets/bg-pages.png" alt="" class="bg-blur">
 
-    <div class="row q-col-md-gutter-md" style="margin: 0 auto; max-width: 1280px">
+    <div class="row justify-center q-col-md-gutter-md" style="margin: 0 auto; max-width: 1280px">
 
-      <div class="col-12 col-sm-3">
+      <div class="col-12 col-sm-2">
           <ColunaUsuario colTitulo="Tecnologia" :usuarios="usuarioTecnologia" @open-modal-usuario="showUsuario" />
+      </div>
+      <div class="col-12 col-sm-2">
+
+      </div>
+      <div class="col-12 col-sm-2">
+
+      </div>
+      <div class="col-12 col-sm-2">
+
+      </div>
+      <div class="col-12 col-sm-2">
+
       </div>
 
    </div>
@@ -90,7 +102,7 @@ export default {
   filter: blur(20px);
 }
 
-#team {
+#partime {
   padding-top: calc(106px + 40px);
   padding-left: 20px;
   padding-right: 20px;
@@ -101,7 +113,7 @@ export default {
   background-size: cover; */
 }
 
-#team .row {
+#partime .row {
     flex-wrap: nowrap;
   }
 
@@ -109,7 +121,7 @@ export default {
   .bg-blur {
     width: inherit;
   }
-  #team .row {
+  #partime .row {
     flex-wrap: wrap;
   }
 }

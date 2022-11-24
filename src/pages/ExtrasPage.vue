@@ -1,5 +1,5 @@
 <template>
-  <q-page id="onboarding" style="overflow-x: hidden;position: relative;">
+  <q-page id="extras" style="overflow-x: hidden;position: relative;">
 
     <img src="../assets/bg-pages.png" alt="" class="bg-blur">
 
@@ -11,7 +11,7 @@
         <div class="box-filmes" v-for="filme, i in filmes" :key="i">
             <q-img
               class="img-card-filme"
-              placeholder-src="../assets/placeholder-cards.png"
+              placeholder-src="../assets/placeholder-cards-filmes.png"
               :src="'https://app.omatheusdev.com/assets/' + filme.imagem"
                @click="showFilmes(filme.id)"
               ></q-img>
@@ -96,7 +96,7 @@ export default {
   filter: blur(20px);
 }
 
-#onboarding {
+#extras {
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 100px;
@@ -104,13 +104,13 @@ export default {
   padding-top: calc(106px + 40px);
 }
 
- #onboarding .col {
+ #extras .col {
    margin: 0 auto;
-   max-width: 1531px;
+   max-width: 1280px;
    justify-content: center;
  }
 
- #onboarding .container-filmes {
+ #extras .container-filmes {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-gap: 20px;
@@ -137,21 +137,21 @@ export default {
 }
 
 @media (max-width: 1440px) {
-  #onboarding .row {
+  #extras .col {
     max-width: 1168px;
   }
 
-  #onboarding .container-filmes {
+  #extras .container-filmes {
    grid-template-columns: repeat(6, 1fr);
   }
 }
 
 @media (max-width: 1280px) {
-  #onboarding .row {
+  #extras .col {
     max-width: 995px;
   }
 
-   #onboarding .container-filmes {
+   #extras .container-filmes {
    grid-template-columns: repeat(5, 1fr);
   }
 }
@@ -162,13 +162,13 @@ export default {
     width: inherit;
   }
 
-  #onboarding .container-filmes {
+  #extras .container-filmes {
    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 500px){
-  #onboarding .container-filmes {
+  #extras .container-filmes {
    grid-template-columns: repeat(2, 1fr);
    gap: 20px;
   }
