@@ -7,25 +7,21 @@
 
         <div class="row q-col-gutter-md coluna-mobile" >
           <div class="col-10 col-md-12" v-for="(atividade, index) in atividades" :key="index">
-            <q-card style="background: #191916;border-radius: 8px;overflow:hidden;"  class="my-card" @click="$emit('open-modal-atividade', atividade.id)">
+            <q-card class="card-atividade" @click="$emit('open-modal-atividade', atividade.id)">
 
               <q-img class="img-card"
               placeholder-src="../assets/placeholder-cards.png"
               :src="'https://app.omatheusdev.com/assets/' + atividade.imagem"
               >
-
-                <div class="absolute-bottom text-subtitle2">
-                  {{atividade.titulo}}
-                </div>
-
                 <template v-slot:loading>
                   <div>
                     <q-spinner-ios color="primary" />
                   </div>
                 </template>
-
               </q-img>
-
+              <span class="card-atividade-titulo">
+                {{atividade.titulo}}
+              </span>
             </q-card>
           </div>
         </div>
@@ -45,6 +41,25 @@ export default {
 </script>
 
 <style scoped>
+
+.card-atividade {
+  background: #191916;
+  border-radius: 8px;
+  overflow:hidden;
+  position: relative;
+}
+
+
+.card-atividade .card-atividade-titulo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 12px;
+  color: #fff;
+  font-weight: 500;
+  background: #00000040;
+}
 
 .titulo-coluna {
   font-size: 18px;

@@ -7,27 +7,22 @@
 
          <div class="row q-col-gutter-md coluna-mobile ">
           <div class="col-10 col-md-12" v-for="(usuario, index) in usuarios" :key="index">
-           <q-card style="background: #191916;border-radius: 8px;overflow: hidden"  class="my-card" @click="$emit('open-modal-usuario', usuario.id)">
+           <q-card class="card-usuario" @click="$emit('open-modal-usuario', usuario.id)">
 
               <q-img
               class="img-card"
               placeholder-src="../assets/placeholder-cards.png"
               :src="'https://app.omatheusdev.com/assets/' + usuario.avatar"
               >
-
-              <div class="absolute-bottom text-subtitle2">
-                {{usuario.first_name}} {{usuario.last_name}}
-              </div>
-
                <template v-slot:loading>
                   <div>
                     <q-spinner-ios color="primary" />
                   </div>
                 </template>
-
               </q-img>
-
-
+              <span class="card-usuario-nome">
+                {{usuario.first_name}} {{usuario.last_name}}
+              </span>
             </q-card>
           </div>
         </div>
@@ -48,6 +43,24 @@ export default {
 
 
 <style scoped>
+
+.card-usuario {
+  background: #191916;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-usuario .card-usuario-nome {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 12px;
+  color: #fff;
+  font-weight: 500;
+  background: #00000040;
+}
 
 .titulo-coluna {
   font-size: 18px;
