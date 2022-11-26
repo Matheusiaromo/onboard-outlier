@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     setUsuarioTecnologia(){
-      api.getFilter("/users", "?filter[area][_eq]=tecnologia&filter[role]=2016dbba-a402-4bc7-85c5-7e0ba53e93f2&fields=*,ferramentas.*,ferramentas.ferramentas_id.ferramenta").then(
+      api.getFilter("/users", "?filter[area][_eq]=Tecnologia&filter[role]=2016dbba-a402-4bc7-85c5-7e0ba53e93f2&fields=*,ferramentas.*,ferramentas.ferramentas_id.ferramenta").then(
         response => {
           console.log(response.data.data)
           this.usuarioTecnologia = response.data.data

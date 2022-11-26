@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     setUsuarioTecnologia(){
-      api.getFilter("/users", "?filter[area][_eq]=tecnologia&filter[role][_neq]=2016dbba-a402-4bc7-85c5-7e0ba53e93f2&sort=prioridade").then(
+      api.getFilter("/users", "?filter[area][_eq]=Tecnologia&filter[role][_neq]=2016dbba-a402-4bc7-85c5-7e0ba53e93f2&sort=prioridade").then(
         response => {
           console.log(response.data.data)
           this.usuarioTecnologia = response.data.data
@@ -67,7 +67,7 @@ export default {
       )
     },
     setUsuarioAquisicao(){
-      api.getFilter("/users", "?filter[area][_eq]=aquisicao&filter[role][_neq]=2016dbba-a402-4bc7-85c5-7e0ba53e93f2&sort=prioridade").then(
+      api.getFilter("/users", "?filter[area][_eq]=Aquisição&filter[role][_neq]=2016dbba-a402-4bc7-85c5-7e0ba53e93f2&sort=prioridade").then(
         response => {
           console.log(response.data.data)
           this.usuarioAquisicao = response.data.data
@@ -75,7 +75,7 @@ export default {
       )
     },
     setUsuarioGestao(){
-      api.getFilter("/users", "?filter[area][_eq]=gestao&sort=prioridade").then(
+      api.getFilter("/users", "?filter[area][_eq]=Gestão&sort=prioridade").then(
         response => {
           console.log(response.data.data)
           this.usuarioGestao = response.data.data
@@ -83,7 +83,7 @@ export default {
       )
     },
     setUsuarioAudiovisual(){
-      api.getFilter("/users", "?filter[area][_eq]=audiovisual&sort=prioridade").then(
+      api.getFilter("/users", "?filter[area][_eq]=Audiovisual&sort=prioridade").then(
         response => {
           console.log(response.data.data)
           this.usuarioAudiovisual = response.data.data
@@ -91,7 +91,7 @@ export default {
       )
     },
     setUsuarioMarketing(){
-      api.getFilter("/users", "?filter[area][_eq]=marketing&sort=prioridade").then(
+      api.getFilter("/users", "?filter[area][_eq]=Marketing&sort=prioridade").then(
         response => {
           console.log(response.data.data)
           this.usuarioMarketing = response.data.data
