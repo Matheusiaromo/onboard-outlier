@@ -6,7 +6,7 @@
         </span>
 
         <div class="row q-col-gutter-md coluna-mobile" >
-          <div class="col-10 col-md-12" v-for="(atividade, index) in atividades" :key="index">
+          <div class="col-5 col-sm-3 col-md-12" v-for="(atividade, index) in atividades" :key="index">
             <q-card class="card-atividade" @click="$emit('open-modal-atividade', atividade.id)">
 
               <q-img class="img-card"
@@ -58,7 +58,9 @@ export default {
   padding: 8px 12px;
   color: #fff;
   font-weight: 500;
-  background: #00000040;
+  background: #00000060;
+  font-size: 14px;
+  line-height: 18px;
 }
 
 .titulo-coluna {
@@ -83,7 +85,7 @@ export default {
 }
 
 
-@media (max-width: 768px){
+@media (max-width: 1024px){
 
   .img-card {
     aspect-ratio: 1 / 1;

@@ -1,8 +1,6 @@
 <template>
   <q-page id="extras" style="overflow-x: hidden;position: relative;">
 
-    <img src="../assets/bg-pages.png" alt="" class="bg-blur">
-
    <div class="col justify-center">
       <span class="titulo-filmes">
         Filmes
@@ -85,17 +83,6 @@ export default {
   line-height: 33px;
 }
 
-.bg-blur {
-  width: 100%;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  mix-blend-mode: lighten;
-  filter: blur(20px);
-}
-
 #extras {
   padding-left: 20px;
   padding-right: 20px;
@@ -158,9 +145,6 @@ export default {
 
 
 @media (max-width: 768px){
-  .bg-blur {
-    width: inherit;
-  }
 
   #extras .container-filmes {
    grid-template-columns: repeat(3, 1fr);

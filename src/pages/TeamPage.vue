@@ -1,27 +1,25 @@
 <template>
   <q-page id="team" style="overflow-x: hidden;">
 
-    <img src="../assets/bg-pages.png" alt="" class="bg-blur">
-
     <div class="row justify-center q-col-md-gutter-md" style="margin: 0 auto;max-width: 1280px">
 
-      <div class="col-12 col-sm-2">
+      <div class="col-12 col-md-2">
           <ColunaUsuario colTitulo="Marketing" :usuarios="usuarioMarketing" @open-modal-usuario="showUsuario" />
       </div>
 
-      <div class="col-12 col-sm-2">
+      <div class="col-12 col-md-2">
           <ColunaUsuario colTitulo="Gestão" :usuarios="usuarioGestao" @open-modal-usuario="showUsuario" />
       </div>
 
-      <div class="col-12 col-sm-2">
+      <div class="col-12 col-md-2">
           <ColunaUsuario colTitulo="Aquisição" :usuarios="usuarioAquisicao" @open-modal-usuario="showUsuario" />
       </div>
 
-      <div class="col-12 col-sm-2">
+      <div class="col-12 col-md-2">
           <ColunaUsuario colTitulo="Tecnologia" :usuarios="usuarioTecnologia" @open-modal-usuario="showUsuario" />
       </div>
 
-      <div class="col-12 col-sm-2">
+      <div class="col-12 col-md-2">
           <ColunaUsuario colTitulo="Audiovisual" :usuarios="usuarioAudiovisual" @open-modal-usuario="showUsuario" />
       </div>
 
@@ -135,17 +133,6 @@ export default {
 
 <style scoped>
 
-.bg-blur {
-  width: 100%;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  mix-blend-mode: lighten;
-  filter: blur(20px);
-}
-
 #team {
   padding-top: calc(106px + 40px);
   padding-left: 20px;
@@ -163,10 +150,8 @@ export default {
 }
 
 
-@media (max-width: 768px){
-  .bg-blur {
-    width: inherit;
-  }
+@media (max-width: 1024px){
+
   #team .row {
     flex-wrap: wrap;
   }

@@ -1,27 +1,27 @@
 <template>
   <q-page id="onboarding" style="overflow-x: hidden;position: relative;">
 
-    <img src="../assets/bg-pages.png" alt="" class="bg-blur">
+    <!-- <img src="../assets/bg-pages.png" alt="" class="bg-blur"> -->
 
     <div class="row justify-center" style="margin: 0 auto; max-width: 1280px">
 
-      <div class="col-12 col-sm-2">
+      <div class="col-12 col-md-2">
           <ColunaAtividade colTitulo="Bem-vindo Outlier!" :atividades="atividadeC1" @open-modal-atividade="showAtividade" />
       </div>
 
-      <div class="col-12 col-sm-2" >
+      <div class="col-12 col-md-2" >
           <ColunaAtividade colTitulo="Missão, Visão e Código" :atividades="atividadeC2" @open-modal-atividade="showAtividade" />
       </div>
 
-      <div class="col-12 col-sm-2" >
+      <div class="col-12 col-md-2" >
         <ColunaAtividade colTitulo="Valores" :atividades="atividadeC3" @open-modal-atividade="showAtividade" />
       </div>
 
-      <div class="col-12 col-sm-2" >
+      <div class="col-12 col-md-2" >
         <ColunaAtividade colTitulo="Primeiros Passos" :atividades="atividadeC4" @open-modal-atividade="showAtividade" />
       </div>
 
-      <div class="col-12 col-sm-2" >
+      <div class="col-12 col-md-2" >
         <ColunaAtividade colTitulo="Suas Ferramentas" :atividades="atividadeC5" @open-modal-atividade="showAtividade" />
       </div>
 
@@ -119,17 +119,6 @@ export default {
 
 <style scoped>
 
-.bg-blur {
-  width: 100%;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  mix-blend-mode: lighten;
-  filter: blur(20px);
-}
-
 .q-img__content > div{
   background: #000 !important;
 }
@@ -152,10 +141,7 @@ export default {
 }
 
 
-@media (max-width: 768px){
-  .bg-blur {
-    width: inherit;
-  }
+@media (max-width: 1024px){
 
   #onboarding .row {
     flex-wrap: wrap;

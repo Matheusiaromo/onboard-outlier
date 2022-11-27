@@ -5,7 +5,7 @@
         >
 
           <div class="q-header-card">
-              <div class="text-h6 text-white">{{atividade.titulo}}</div>
+              <div class="titulo-modal-atividade">{{atividade.titulo}}</div>
               <q-icon v-close-popup name="close" size="30px" color="primary" />
           </div>
 
@@ -20,7 +20,6 @@
                 :ratio="16/9"
                 style="margin-bottom: 20px;border-radius: 8px;max-height: 200px;"
               />
-
 
               <div id="contentAtividade" v-html="atividade.conteudo"></div>
 
@@ -61,6 +60,14 @@ export default {
 </script>
 
 <style>
+
+.titulo-modal-atividade {
+  font-weight: 500;
+  letter-spacing: 0.0125em;
+  font-size: 18px;
+  line-height: 24px;
+  color: #fff;
+}
 
 .q-dialog__inner {
   display: flex;

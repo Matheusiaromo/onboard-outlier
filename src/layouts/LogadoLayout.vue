@@ -1,9 +1,10 @@
 <template>
   <q-layout view="lHh Lpr lFf">
+    <img src="../assets/bg-pages.png" alt="" class="bg-blur">
     <q-header class="h-bilhon">
 
         <div class="h-logo">
-          <img style="max-width: 175px" src="../assets/logo-bilhon.png" alt="">
+          <img style="max-width: 175px" src="../assets/Logo-Horizontal-2.svg" alt="">
         </div>
 
         <div class="h-div-tabs">
@@ -65,6 +66,17 @@ export default {
 
 <style scoped>
 
+.bg-blur {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  mix-blend-mode: lighten;
+  filter: blur(20px);
+}
+
 .h-bilhon {
   position: relative;
   margin-bottom: calc(-106px + -106px);
@@ -103,6 +115,10 @@ export default {
   }
   .h-logo{
     order: 1;
+  }
+
+  .bg-blur {
+    width: auto;
   }
 
   .h-logo {
