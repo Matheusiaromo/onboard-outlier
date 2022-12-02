@@ -1,232 +1,319 @@
 <template>
 
       <q-dialog
+        id="modal-usuario"
         class="dialog-onboard"
-        :value="modelValue" @input="handleModal"
-        >
+        :value="modelValue"
+        @input="handleModal"
+      >
 
-        <div class="q-header-card">
-              <div class="text-h6 text-white">{{usuario.first_name}} {{usuario.last_name}}</div>
-              <q-icon v-close-popup name="close" size="30px" color="primary" />
-        </div>
+        <div class="card-modal-usuario" >
 
-          <q-card
-          style="width: 100%;background: #FFFFFF;border-radius: 8px;"
-          >
+          <div style="max-height: 70vh" class="scroll scroll-modal-usuario">
 
-            <q-card-section style="max-height: 70vh" class="scroll">
+            <img src="../assets/banner-modal-usuario.png" alt="" class="banner-modal-usuario">
+            <div class="container-conteudo-modal-usuario">
+              <img class="img-modal-usuario" :src="'https://app.omatheusdev.com/assets/' + usuario.avatar" />
 
-              <q-img
-                :src="'https://app.omatheusdev.com/assets/' + usuario.avatar"
-                :ratio="16/9"
-                 style="border-radius: 8px;max-height: 163px;"
-              />
+              <q-icon class="close-modal-usuario" v-close-popup name="close" size="30px" color="primary" />
 
-              <div class="perfil-usuario" v-if="usuario.id === this.$store.state.usuario.usuario.id">
-                  <h4>Sobre</h4>
+              <div class="info-usuarios form-usuario" v-if="usuario.id === this.$store.state.usuario.usuario.id">
 
-                  <div class="row q-col-gutter-md">
-                    <div class="col-12">
-                      <q-input rows="4" type="textarea" v-model="usuario.sobre_mim" label="Sobre mim" />
-                    </div>
-                    <div class="col-12">
-                      <q-input rows="4" type="textarea" v-model="usuario.descricao_servico" label="Descrição do serviço" />
-                    </div>
+                  <div class="row vertical">
                     <div class="col-12 col-md-6">
-                      <q-input v-model="usuario.cpf" label="CPF" mask="###.###.###-##" />
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <q-input v-model="usuario.cnpj" label="CNPJ" mask="##.###.###/####-##" />
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <q-input v-model="usuario.razao_social" label="Razão social" />
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <q-input v-model="usuario.rg" mask="##.###.###-#" label="RG" />
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <q-input v-model="usuario.pix" label="PIX" />
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <q-input v-model="usuario.slack" label="Slack" />
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <q-input v-model="usuario.data_nascimento" mask="##/##/####" label="Data de nascimento" />
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <q-input v-model="usuario.email_empresarial" label="email_empresarial" />
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <q-input v-model="usuario.endereco_comercial" label="Endereço comercial" />
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <q-input v-model="usuario.endereco_residencial" label="Endereço residencial" />
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <q-input v-model="usuario.whatsapp" mask="(##) #####-####" label="Whatsapp" />
-                    </div>
-                    <div class="col-12">
-                      <h6>Ferramentas</h6>
-                      <div v-for="ferramenta, key in usuario.ferramentas" :key="key + 'A'">
-                        <q-checkbox v-model="ferramenta.status" :label="ferramenta.descricao" />
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <h6>Pagamentos</h6>
-                      <div v-for="pagamento, key in usuario.pagamentos" :key="key + 'B'">
-                        <q-checkbox v-model="pagamento.status" :label="pagamento.descricao" />
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <h6>Passos</h6>
-                      <div v-for="passo, key in usuario.passos" :key="key + 'C'">
-                        <q-checkbox v-model="passo.status" :label="passo.descricao" />
-                      </div>
+                      <h2>{{usuario.first_name}} {{usuario.last_name}}</h2>
+                      <p>{{usuario.area}}</p>
                     </div>
                   </div>
 
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="field-usuario">
+                        <label style="margin-bottom: 8px">Sobre mim</label>
+                        <q-input type="textarea" outlined dense v-model="usuario.sobre_mim" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="field-usuario">
+                        <label style="margin-bottom: 8px">Descrição serviço</label>
+
+                        <q-input type="textarea" outlined dense v-model="usuario.descricao_servico" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row form-input-usuario">
+                    <div>
+                      <div class="field-usuario">
+                        <label>CPF</label>
+                        <q-input outlined dense mask="###.###.###-##" v-model="usuario.cpf" />
+                      </div>
+                        <div class="field-usuario">
+                        <label>CNPJ</label>
+                        <q-input outlined dense mask="##.###.###/####-##" v-model="usuario.cnpj" />
+                      </div>
+                      <div class="field-usuario">
+                          <label>Razão social</label>
+                          <q-input outlined dense v-model="usuario.razao_social" />
+                      </div>
+                      <div class="field-usuario">
+                          <label>RG</label>
+                          <q-input outlined dense v-model="usuario.rg" />
+                      </div>
+                      <div class="field-usuario">
+                        <label>Endereço comercial</label>
+                        <q-input outlined dense v-model="usuario.endereco_comercial" />
+                      </div>
+                      <div class="field-usuario">
+                        <label>Whatsapp</label>
+                        <q-input outlined dense mask="(##) #####-####" v-model="usuario.whatsapp" />
+                      </div>
+                    </div>
+                    <div>
+                      <div class="field-usuario">
+                        <label>PIX</label>
+                        <q-input outlined dense v-model="usuario.pix" />
+                      </div>
+                      <div class="field-usuario">
+                        <label>Slack</label>
+                        <q-input outlined dense v-model="usuario.slack" />
+                      </div>
+                      <div class="field-usuario">
+                        <label>Data nascimento</label>
+                        <q-input outlined dense mask="##/##/####" v-model="usuario.data_nascimento" />
+                      </div>
+                      <div class="field-usuario">
+                        <label>E-mail email_empresarial</label>
+                        <q-input outlined dense v-model="usuario.email_empresarial" />
+                      </div>
+                      <div class="field-usuario">
+                        <label>Endereco residencial</label>
+                        <q-input outlined dense v-model="usuario.endereco_residencial" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <label>Ferramentas</label>
+                        <div class="grupo-checkbox">
+                            <div v-for="ferramenta, key in usuario.ferramentas" :key="key + 'A'">
+                            <input :id="key + 'A'" type="checkbox" v-model="ferramenta.status">
+                            <label :for="key + 'A'">{{ferramenta.descricao}}</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <label>Pagamentos</label>
+                        <div class="grupo-checkbox">
+                            <div v-for="pagamento, key in usuario.pagamentos" :key="key + 'B'">
+                            <input :id="key + 'B'" type="checkbox" v-model="pagamento.status">
+                            <label :for="key + 'B'">{{pagamento.descricao}}</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <label>Passos</label>
+                        <div class="grupo-checkbox">
+                            <div v-for="passo, key in usuario.passos" :key="key + 'A'">
+                            <input :id="key + 'C'" type="checkbox" v-model="passo.status">
+                            <label :for="key + 'C'">{{passo.descricao}}</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
               </div>
 
-
-              <div class="perfil-admin" v-else-if="isAdmin">
-                <h4>Sobre</h4>
-
-                <div class="row">
-                  <div class="col-12 gdc">
-                      <span class="text-h6">Sobre mim</span>
-                      <p>{{usuario.sobre_mim}}</p>
+              <div class="info-usuarios form-admin" v-else-if="isAdmin">
+                <div class="row vertical">
+                  <div class="col-12 col-md-6">
+                    <h2>{{usuario.first_name}} {{usuario.last_name}}</h2>
+                    <p>{{usuario.funcao}}</p>
                   </div>
-                  <div class="col-12 gdc">
-                      <span class="text-h6">Descrição do serviço</span>
-                      <p>{{usuario.descricao_servico}}</p>
-                  </div>
-                  <div class="col-12 col-md-6 gdc">
-                      <span class="text-h6 area-input">Área</span>
-                      <p>{{usuario.area}}</p>
-                  </div>
-                  <div class="col-12 col-md-6 gdc">
-                      <span class="text-h6">Data Nascimento</span>
-                      <p>{{usuario.data_nascimento}}</p>
-                  </div>
-                  <div class="col-12 col-md-6 gdc">
-                      <span class="text-h6">CPF</span>
-                      <p>{{usuario.cpf}}</p>
-                  </div>
-                  <div class="col-12 col-md-6 gdc">
-                      <span class="text-h6">RG</span>
-                      <p>{{usuario.rg}}</p>
-                  </div>
-                  <div class="col-12 col-md-6 gdc">
-                      <span class="text-h6">E-mail empresarial</span>
+                  <div class="col-12 col-md-6">
+                    <div class="field-usuario">
+                      <label>E-mail comercial</label>
                       <p>{{usuario.email_empresarial}}</p>
-                  </div>
-                  <div class="col-12 col-md-6 gdc">
-                      <span class="text-h6">PIX</span>
-                      <p>{{usuario.pix}}</p>
-                  </div>
-                  <div class="col-12 col-md-6 gdc">
-                      <span class="text-h6">CNPJ</span>
-                      <p>{{usuario.cnpj}}</p>
-                  </div>
-                  <div class="col-12 col-md-6 gdc">
-                      <span class="text-h6">Razão Social</span>
-                      <p>{{usuario.razao_social}}</p>
-                  </div>
-                  <div class="col-12 col-md-6 gdc">
-                      <span class="text-h6">Endereço comercial</span>
-                      <p>{{usuario.endereco_comercial}}</p>
-                  </div>
-                  <div class="col-12 col-md-6 gdc">
-                      <span class="text-h6">Endereço residencial</span>
-                      <p>{{usuario.endereco_residencial}}</p>
-                  </div>
-                  <div class="col-12 col-md-6 gdc">
-                      <span class="text-h6">Whatsapp</span>
-                      <p>{{usuario.whatsapp}}</p>
-                  </div>
-                  <div class="col-12">
-                      <h6>Ferramentas</h6>
-                      <div v-for="ferramenta, key in usuario.ferramentas" :key="key + 'A'">
-                        <q-checkbox v-model="ferramenta.status" :label="ferramenta.descricao" />
-                      </div>
                     </div>
-                    <div class="col-12">
-                      <h6>Pagamentos</h6>
-                      <div v-for="pagamento, key in usuario.pagamentos" :key="key + 'B'">
-                        <q-checkbox v-model="pagamento.status" :label="pagamento.descricao" />
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <h6>Passos</h6>
-                      <div v-for="passo, key in usuario.passos" :key="key + 'C'">
-                        <q-checkbox v-model="passo.status" :label="passo.descricao" />
-                      </div>
-                    </div>
-
-                </div>
-              </div>
-
-              <div class="perfil-publico" v-else>
-                <h4>Sobre</h4>
-
-                <div class="row">
-                  <div class="col-12 gdc">
-                      <span class="text-h6">Sobre mim</span>
-                      <p>{{usuario.sobre_mim}}</p>
-                  </div>
-                  <div class="col-12 gdc">
-                      <span class="text-h6">Descrição do serviço</span>
-                      <p>{{usuario.descricao_servico}}</p>
-                  </div>
-                  <div class="col-12 col-md-6 gdc">
-                      <span class="text-h6 area-input">Área</span>
-                      <p>{{usuario.area}}</p>
-                  </div>
-                  <div class="col-12 col-md-6 gdc">
-                      <span class="text-h6">Data de nascimento</span>
-                      <p>{{usuario.data_nascimento}}</p>
-                  </div>
-                  <div class="col-12 col-md-6 gdc">
-                      <span class="text-h6">E-mail empresarial</span>
-                      <p>{{usuario.email_empresarial}}</p>
-                  </div>
-                  <div class="col-12 col-md-6 gdc">
-                      <span class="text-h6">Slack</span>
+                    <div class="field-usuario">
+                      <label>Slack</label>
                       <p>{{usuario.slack}}</p>
+                    </div>
+                    <div class="field-usuario">
+                      <label>Área</label>
+                      <p>{{usuario.area}}</p>
+                    </div>
                   </div>
-
-                  <!-- <div class="col-12 col-md-6 gdc">
-                      <span class="text-h6">CNPJ</span>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="field-usuario">
+                      <label>Sobre mim</label>
+                      <p>{{usuario.sobre_mim}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="field-usuario">
+                      <label>Data nascimento</label>
+                      <p>{{usuario.data_nascimento}}</p>
+                    </div>
+                    <div class="field-usuario">
+                      <label>CPF</label>
+                      <p>{{usuario.cpf}}</p>
+                    </div>
+                    <div class="field-usuario">
+                      <label>RG</label>
+                      <p>{{usuario.rg}}</p>
+                    </div>
+                    <div class="field-usuario">
+                      <label>PIX</label>
+                      <p>{{usuario.pix}}</p>
+                    </div>
+                    <div class="field-usuario">
+                      <label>CNPJ</label>
                       <p>{{usuario.cnpj}}</p>
-                  </div> -->
-                  <!-- <div class="col-12 col-md-6 gdc">
-                      <span class="text-h6">Razão Social</span>
-                      <p>{{usuario.razao_social}}</p>
-                  </div> -->
-                  <!-- <div class="col-12 col-md-6 gdc">
-                      <span class="text-h6">Endereço comercial</span>
-                      <p>{{usuario.endereco_comercial}}</p>
-                  </div> -->
-
-                  <div class="col-12 col-md-6 gdc">
-                      <span class="text-h6">Whatsapp</span>
-                      <p>{{usuario.whatsapp}}</p>
+                    </div>
                   </div>
-
+                  <div class="col-12 col-md-6">
+                    <div class="field-usuario">
+                      <label>Razão social</label>
+                      <p>{{usuario.razao_social}}</p>
+                    </div>
+                    <div class="field-usuario">
+                      <label>Endereco comercial</label>
+                      <p>{{usuario.endereco_comercial}}</p>
+                    </div>
+                    <div class="field-usuario">
+                      <label>Endereco residencial</label>
+                      <p>{{usuario.endereco_residencial}}</p>
+                    </div>
+                    <div class="field-usuario">
+                      <label>Whatsapp</label>
+                      <p>{{usuario.whatsapp}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <label>Ferramentas</label>
+                    <div class="grupo-checkbox">
+                        <div v-for="ferramenta, key in usuario.ferramentas" :key="key + 'A'">
+                        <input :id="key + 'A'" type="checkbox" v-model="ferramenta.status">
+                        <label :for="key + 'A'">{{ferramenta.descricao}}</label>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <label>Pagamentos</label>
+                    <div class="grupo-checkbox">
+                      <div v-for="pagamento, key in usuario.pagamentos" :key="key + 'B'">
+                        <input :id="key + 'B'" type="checkbox" v-model="pagamento.status">
+                        <label :for="key + 'B'">{{pagamento.descricao}}</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <label>Passos</label>
+                    <div class="grupo-checkbox">
+                      <div v-for="passo, key in usuario.passos" :key="key + 'C'">
+                        <input :id="key + 'C'" type="checkbox" v-model="passo.status">
+                        <label :for="key + 'C'">{{passo.descricao}}</label>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
+              <div class="info-usuarios form-publico" v-else>
+                <div class="row vertical">
+                  <div class="col-12 col-md-6">
+                    <h2>{{usuario.first_name}} {{usuario.last_name}}</h2>
+                    <p>{{usuario.funcao}}</p>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="field-usuario">
+                      <label>E-mail comercial</label>
+                      <p>{{usuario.email_empresarial}}</p>
+                    </div>
+                    <div class="field-usuario">
+                      <label>Slack</label>
+                      <p>{{usuario.slack}}</p>
+                    </div>
+                    <div class="field-usuario">
+                      <label>Área</label>
+                      <p>{{usuario.area}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="field-usuario">
+                      <label>Sobre mim</label>
+                      <p>{{usuario.sobre_mim}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="field-usuario">
+                      <label>Whatsapp</label>
+                      <p>{{usuario.whatsapp}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <label>Ferramentas</label>
+                    <div class="grupo-checkbox">
+                        <div v-for="ferramenta, key in usuario.ferramentas" :key="key + 'A'">
+                        <input :id="key + 'A'" type="checkbox" v-model="ferramenta.status">
+                        <label :for="key + 'A'">{{ferramenta.descricao}}</label>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <label>Pagamentos</label>
+                    <div class="grupo-checkbox">
+                      <div v-for="pagamento, key in usuario.pagamentos" :key="key + 'B'">
+                        <input :id="key + 'B'" type="checkbox" v-model="pagamento.status">
+                        <label :for="key + 'B'">{{pagamento.descricao}}</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <label>Passos</label>
+                    <div class="grupo-checkbox">
+                      <div v-for="passo, key in usuario.passos" :key="key + 'C'">
+                        <input :id="key + 'C'" type="checkbox" v-model="passo.status">
+                        <label :for="key + 'C'">{{passo.descricao}}</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
+              <div class="btn-modal-usuario" v-if="usuario.id === this.$store.state.usuario.usuario.id">
+                <q-btn label="Salvar" @click="$emit('update-usuario-detalhes')" color="primary" />
+              </div>
+            </div>
+          </div>
 
-            </q-card-section>
-
-            <q-separator />
-
-            <q-card-actions align="right" v-if="usuario.id === this.$store.state.usuario.usuario.id">
-              <q-btn label="Salvar" @click="$emit('update-usuario-detalhes')" color="primary" />
-            </q-card-actions>
-          </q-card>
-        </q-dialog>
+        </div>
+      </q-dialog>
 
 </template>
 
@@ -264,6 +351,145 @@ export default {
 
 <style>
 
+#modal-usuario h2 {
+  padding: 0px;
+  margin: 0px;
+  font-size: 24px;
+  line-height: 33px;
+  color: #191916;
+  font-weight: 700;
+}
+
+#modal-usuario p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #44423C;
+  margin: 0px;
+  padding: 0px;
+}
+
+#modal-usuario label {
+  color: #7A7D70;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+#modal-usuario .banner-modal-usuario {
+  width: 100%;
+}
+
+#modal-usuario .form-input-usuario {
+  display: grid;
+	grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+
+#modal-usuario .grupo-checkbox {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#modal-usuario .grupo-checkbox > div {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: baseline;
+}
+
+#modal-usuario .grupo-checkbox label {
+  line-height: 140%;
+  color: #343A40;
+  font-size: 14px;
+}
+
+#modal-usuario .grupo-checkbox input[type="checkbox"] {
+  accent-color: #B77E45;
+}
+
+#modal-usuario .form-input-usuario label {
+  margin-bottom: 8px;
+}
+
+/* #modal-usuario input {
+  border-radius: 4px;
+  border: 1px solid #7a7d705e;
+  padding: 8px;
+  margin-top: 5px;
+  line-height: 140%;
+  color: #343A40;
+  font-size: 14px;
+} */
+
+/* #modal-usuario textarea {
+  border-radius: 4px;
+  border: none;
+  border: 1px solid #7A7D70;
+  padding: 5px;
+  margin-top: 5px;
+} */
+
+#modal-usuario .btn-modal-usuario {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.info-usuarios {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-usuarios .field-usuario {
+  display: flex;
+  flex-direction: column;
+}
+
+#modal-usuario .form-usuario {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-usuario {
+  padding: 0px;
+  margin: 0px;
+}
+
+#modal-usuario textarea:focus, input:focus{
+    outline-color: #B77E45;
+}
+
+.info-usuarios > .row {
+  padding: 16px;
+  border-radius: 8px;
+  background: #F5F5F5;
+}
+
+.info-usuarios .row > div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-usuarios .vertical > div {
+  gap: 0px;
+}
+
+.info-usuarios .vertical {
+  padding: 0px;
+  background: #fff;
+}
+
+.info-usuarios  .vertical .field-usuario {
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+}
+
 .q-dialog__inner {
   display: flex;
   flex-direction: column;
@@ -272,6 +498,39 @@ export default {
 
 .q-card__section--vert {
   padding: 32px;
+}
+
+.card-modal-usuario {
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: 8px;
+  position: relative;
+}
+
+.img-modal-usuario {
+  border-radius: 8px;
+  max-height: 163px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  margin-top: -120px;
+  border: 4px solid #fff;
+}
+
+.container-conteudo-modal-usuario {
+  padding: 32px;
+  padding-top: 0px;
+}
+
+#modal-usuario .close-modal-usuario {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+#modal-usuario .close-modal-usuario:hover {
+  cursor: pointer;
 }
 
 .gdc span{
@@ -332,9 +591,27 @@ export default {
   text-transform: capitalize;
 }
 
-@media (max-width: 768px){
-  .q-card__section--vert {
+@media (max-width: 600px){
+.q-card__section--vert {
   padding: 20px;
+}
+
+#modal-usuario .form-input-usuario {
+  grid-template-columns: 1fr;
+}
+
+#modal-usuario .banner-modal-usuario {
+  height: 120px;
+}
+
+#modal-usuario .img-modal-usuario {
+  max-height: 120px;
+  margin-top: -90px;
+}
+
+.container-conteudo-modal-usuario {
+  padding: 20px;
+  padding-top: 0px;
 }
 }
 
