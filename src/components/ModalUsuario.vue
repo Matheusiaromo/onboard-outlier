@@ -271,39 +271,6 @@
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-12">
-                    <label>Ferramentas</label>
-                    <div class="grupo-checkbox">
-                        <div v-for="ferramenta, key in usuario.ferramentas" :key="key + 'A'">
-                        <input :id="key + 'A'" type="checkbox" v-model="ferramenta.status">
-                        <label :for="key + 'A'">{{ferramenta.descricao}}</label>
-                    </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                    <label>Pagamentos</label>
-                    <div class="grupo-checkbox">
-                      <div v-for="pagamento, key in usuario.pagamentos" :key="key + 'B'">
-                        <input :id="key + 'B'" type="checkbox" v-model="pagamento.status">
-                        <label :for="key + 'B'">{{pagamento.descricao}}</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                    <label>Passos</label>
-                    <div class="grupo-checkbox">
-                      <div v-for="passo, key in usuario.passos" :key="key + 'C'">
-                        <input :id="key + 'C'" type="checkbox" v-model="passo.status">
-                        <label :for="key + 'C'">{{passo.descricao}}</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
 
               <div class="btn-modal-usuario" v-if="usuario.id === this.$store.state.usuario.usuario.id">
