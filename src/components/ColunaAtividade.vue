@@ -73,7 +73,7 @@ export default {
 }
 
 .img-card {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 13;
   width: 100%;
   transition: .5s;
 }

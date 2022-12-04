@@ -9,7 +9,7 @@
 
         <div class="card-modal-usuario" >
 
-          <div style="max-height: 70vh" class="scroll scroll-modal-usuario">
+          <div class="scroll scroll-modal-usuario">
 
             <img src="../assets/banner-modal-usuario.png" alt="" class="banner-modal-usuario">
             <div class="container-conteudo-modal-usuario">
@@ -476,7 +476,8 @@ export default {
 
 .img-modal-usuario {
   border-radius: 8px;
-  max-height: 163px;
+  height: 163px;
+  width: 163px;
   aspect-ratio: 1/1;
   object-fit: cover;
   object-position: center;
@@ -572,7 +573,8 @@ export default {
 }
 
 #modal-usuario .img-modal-usuario {
-  max-height: 120px;
+  height: 120px;
+  width: 120px;
   margin-top: -90px;
 }
 

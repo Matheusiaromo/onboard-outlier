@@ -177,7 +177,6 @@ export default {
     flex-direction: column;
     padding: 20px;
     gap: 20px;
-    max-height: 70vh;
     width: 100%;
     max-width: 100%;
   }

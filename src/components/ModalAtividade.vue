@@ -90,10 +90,7 @@ export default {
 #modal-atividade .titulo-modal-atividade {
   text-align: center;
   margin-bottom: 20px;
-}
-
-#modal-atividade .scroll-modal-atividade {
-  max-height: 70vh;
+  margin-top: 10px;
 }
 
 .q-dialog__inner {
