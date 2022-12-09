@@ -34,7 +34,7 @@ import ModalFilmes from "src/components/ModalFilmes.vue"
 import { api } from "src/services"
 
 export default {
-  name: 'ExtrasPage',
+  name: 'FilmesPage',
   data(){
     return {
       filmes: [],
