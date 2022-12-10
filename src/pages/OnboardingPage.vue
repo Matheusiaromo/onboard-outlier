@@ -6,23 +6,23 @@
     <div class="row justify-center" style="margin: 0 auto; max-width: 1280px">
 
       <div class="col-12 col-md-2">
-          <ColunaAtividade colTitulo="Bem-vindo Outlier!" :atividades="atividadeC1" @open-modal-atividade="showAtividade" />
+          <ColunaAtividade colTitulo="Missão, visão e código" :atividades="atividadeC1" @open-modal-atividade="showAtividade" />
       </div>
 
       <div class="col-12 col-md-2" >
-          <ColunaAtividade colTitulo="Missão, Visão e Código" :atividades="atividadeC2" @open-modal-atividade="showAtividade" />
+          <ColunaAtividade colTitulo="Valores" :atividades="atividadeC2" @open-modal-atividade="showAtividade" />
       </div>
 
       <div class="col-12 col-md-2" >
-        <ColunaAtividade colTitulo="Valores" :atividades="atividadeC3" @open-modal-atividade="showAtividade" />
+        <ColunaAtividade colTitulo="Primeiros passos" :atividades="atividadeC3" @open-modal-atividade="showAtividade" />
       </div>
 
       <div class="col-12 col-md-2" >
-        <ColunaAtividade colTitulo="Primeiros Passos" :atividades="atividadeC4" @open-modal-atividade="showAtividade" />
+        <ColunaAtividade colTitulo="Suas ferramentas" :atividades="atividadeC4" @open-modal-atividade="showAtividade" />
       </div>
 
       <div class="col-12 col-md-2" >
-        <ColunaAtividade colTitulo="Suas Ferramentas" :atividades="atividadeC5" @open-modal-atividade="showAtividade" />
+        <ColunaAtividade colTitulo="Treinamento" :atividades="atividadeC5" @open-modal-atividade="showAtividade" />
       </div>
 
    </div>
