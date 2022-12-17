@@ -91,6 +91,23 @@ html, body {
 }
 /* FIM EMBED  */
 
+.q-tabs {
+  color: #7A7D70;
+  font-weight: 300;
+}
+
+.q-tab__label {
+  transition: .3s;
+}
+
+.q-tab__label:hover {
+  color: #fff;
+  transition: .2s;
+}
+
+.q-router-link--active {
+  color: #fff !important;
+}
 
 .q-tabs__content {
   display: flex;

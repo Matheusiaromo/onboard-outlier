@@ -40,10 +40,10 @@
   #welcome {
     overflow-x: hidden;
     position: relative;
-    padding: 40px 0px 100px 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: calc(100vh - 106px);
   }
 
   #welcome .col-texto {
@@ -65,7 +65,7 @@
     padding: 0px;
     margin: 0px;
     color: #fff;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 54px;
     line-height: 74px;
   }
@@ -118,6 +118,9 @@
   }
 
   @media (max-width: 600px) {
+    #welcome {
+      height: calc(100vh - 140px);
+    }
     #welcome h1 {
       font-size: 34px;
       line-height: 50px;

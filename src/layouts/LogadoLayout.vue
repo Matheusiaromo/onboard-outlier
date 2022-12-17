@@ -3,7 +3,7 @@
     <img src="../assets/bg-pages.png" alt="" class="bg-blur">
     <q-header class="h-bilhon">
 
-        <div class="h-logo">
+        <div class="h-logo" >
           <img style="max-width: 175px" src="../assets/Logo-Horizontal-2.svg" alt="">
         </div>
 
