@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="lHh Lpr lFf" id="default">
     <img src="../assets/bg-pages.png" alt="" class="bg-blur">
     <q-header class="h-bilhon">
 
@@ -14,10 +14,11 @@
             class="h-tabs"
             indicator-color="primary"
           >
+            <q-route-tab :to="{ name: 'welcome' }" exact replace label="Welcome" />
             <q-route-tab :to="{ name: 'onboarding' }" exact replace label="Onboarding" />
             <q-route-tab v-if="isAdmin || isMembro" :to="{ name: 'team' }" exact replace label="Team" />
             <q-route-tab v-if="isAdmin || isPartime" :to="{ name: 'parttime' }" exact replace label="PartTime" />
-            <q-route-tab :to="{ name: 'filmes' }" exact replace label="Filmes" />
+            <q-route-tab :to="{ name: 'movies' }" exact replace label="Movies" />
           </q-tabs>
         </div>
 
@@ -33,7 +34,7 @@
 
     </q-header>
 
-    <q-page-container>
+    <q-page-container style="padding: 0px">
       <router-view />
     </q-page-container>
   </q-layout>
@@ -72,14 +73,18 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-
+  top: 0;
   mix-blend-mode: lighten;
   filter: blur(20px);
 }
 
+#default {
+  /* background: blue; */
+  position: relative;
+}
+
 .h-bilhon {
   position: relative;
-  margin-bottom: calc(-106px + -106px);
 
   display: flex;
   flex-direction: row;
@@ -91,7 +96,6 @@ export default {
   background: rgba(0, 0, 0, 0.22);
   border-bottom: 1px solid #44423C;
 }
-
 .h-logo{
     padding-left: 20px;
 }
@@ -109,9 +113,8 @@ export default {
   .h-bilhon {
     flex-wrap: wrap;
     height: inherit;
-    margin-bottom: calc(-115px + -115px);
     background: rgba(0, 0, 0, 0.44);
-    background: linear-gradient(360deg, rgba(0, 0, 0, 0.22) 42%, rgba(0, 0, 0, 0.44) 40px);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.44) 68px,rgba(0, 0, 0, 0.22) 40%);
   }
   .h-logo{
     order: 1;

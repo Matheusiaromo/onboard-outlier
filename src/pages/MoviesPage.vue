@@ -1,5 +1,5 @@
 <template>
-  <q-page id="extras" style="overflow-x: hidden;position: relative;">
+  <q-page id="movies" style="overflow-x: hidden;position: relative;">
 
    <div class="col justify-center">
       <span class="titulo-filmes">
@@ -34,7 +34,7 @@ import ModalFilmes from "src/components/ModalFilmes.vue"
 import { api } from "src/services"
 
 export default {
-  name: 'FilmesPage',
+  name: 'MoviesPage',
   data(){
     return {
       filmes: [],
@@ -83,21 +83,21 @@ export default {
   line-height: 33px;
 }
 
-#extras {
+#movies {
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 100px;
 
-  padding-top: calc(106px + 40px);
+  padding-top: 40px;
 }
 
- #extras .col {
+ #movies .col {
    margin: 0 auto;
    max-width: 1280px;
    justify-content: center;
  }
 
- #extras .container-filmes {
+ #movies .container-filmes {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-gap: 20px;
@@ -124,21 +124,21 @@ export default {
 }
 
 @media (max-width: 1440px) {
-  #extras .col {
+  #movies .col {
     max-width: 1168px;
   }
 
-  #extras .container-filmes {
+  #movies .container-filmes {
    grid-template-columns: repeat(6, 1fr);
   }
 }
 
 @media (max-width: 1280px) {
-  #extras .col {
+  #movies .col {
     max-width: 995px;
   }
 
-   #extras .container-filmes {
+   #movies .container-filmes {
    grid-template-columns: repeat(5, 1fr);
   }
 }
@@ -146,13 +146,13 @@ export default {
 
 @media (max-width: 768px){
 
-  #extras .container-filmes {
+  #movies .container-filmes {
    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 500px){
-  #extras .container-filmes {
+  #movies .container-filmes {
    grid-template-columns: repeat(2, 1fr);
    gap: 20px;
   }

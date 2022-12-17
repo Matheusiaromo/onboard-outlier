@@ -92,6 +92,11 @@ html, body {
 /* FIM EMBED  */
 
 
+.q-tabs__content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 @media (min-width: 600px) {
 
   .q-dialog__inner--minimized > div {

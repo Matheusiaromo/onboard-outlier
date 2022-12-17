@@ -1,7 +1,7 @@
 import { api } from 'src/services'
 
 export function getUsuario (context) {
-  return api.get(`/users/me?fields=id,nome,email,role`)
+  return api.get(`/users/me?fields=id,nome,email,role,genero`)
     .then(response => {
       context.commit('UPDATE_USUARIO', response.data.data)
       context.commit('UPDATE_LOGIN', true)
@@ -26,7 +26,8 @@ export function deslogarUsuario (context) {
     id: "",
     nome: "",
     email: "",
-    role: ""
+    role: "",
+    genero: ""
   })
   window.localStorage.removeItem("token")
   window.localStorage.removeItem("refreshToken")

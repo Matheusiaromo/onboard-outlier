@@ -90,7 +90,7 @@ export default {
 <style scoped>
 
 #partime {
-  padding-top: calc(106px + 40px);
+  padding-top: 40px;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 100px;

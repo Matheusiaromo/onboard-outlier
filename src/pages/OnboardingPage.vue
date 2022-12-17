@@ -128,11 +128,8 @@ export default {
   padding-right: 20px;
   padding-bottom: 100px;
 
-  padding-top: calc(106px + 40px);
+  padding-top: 40px;
 
-/*   background-image: url("../assets/bg-main.png");
-  background-position: center;
-  background-size: cover; */
 }
 
 #onboarding .row {

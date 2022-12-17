@@ -59,7 +59,7 @@ export default {
         this.$store.dispatch("logarUsuario", this.form)
           .then(() => {
             this.$store.dispatch("getUsuario");
-            this.$router.push({ name: "onboarding" });
+            this.$router.push({ name: "welcome" });
 
             this.$q.notify("Logado com sucesso")
           })

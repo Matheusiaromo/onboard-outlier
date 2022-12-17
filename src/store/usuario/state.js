@@ -10,7 +10,8 @@ export default function () {
       id: "",
       nome: "",
       email: "",
-      role: ""
+      role: "",
+      genero: ""
     }
   }
 }
