@@ -179,6 +179,10 @@
                       <label>CNPJ</label>
                       <p>{{usuario.cnpj}}</p>
                     </div>
+                    <div class="field-usuario">
+                      <label>Empresa</label>
+                      <p>{{usuario.empresa | corrigeEmpresa}}</p>
+                    </div>
                   </div>
                   <div class="col-12 col-md-6">
                     <div class="field-usuario">
@@ -269,6 +273,10 @@
                       <label>Whatsapp</label>
                       <p>{{usuario.whatsapp}}</p>
                     </div>
+                    <div class="field-usuario">
+                      <label>Empresa</label>
+                      <p>{{usuario.empresa | corrigeEmpresa}}</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -310,6 +318,13 @@ export default {
   methods: {
     handleModal(v) {
       this.modelValue = v;
+    }
+  },
+  filters: {
+    corrigeEmpresa: function (e){
+      e = e.toString().replace("_", " ").replace("Lanca", "Lança")
+      return e
+
     }
   }
 

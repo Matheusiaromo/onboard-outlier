@@ -4,6 +4,9 @@
     <!-- <img src="../assets/bg-pages.png" alt="" class="bg-blur"> -->
 
     <div class="row justify-center" style="margin: 0 auto; max-width: 1280px">
+      <div v-if="atividadeCE.length" class="col-12 col-md-2">
+          <ColunaAtividade colTitulo="Empresas" :atividades="atividadeCE" @open-modal-atividade="showAtividade" />
+      </div>
 
       <div class="col-12 col-md-2">
           <ColunaAtividade colTitulo="Missão, visão e código" :atividades="atividadeC1" @open-modal-atividade="showAtividade" />
@@ -48,6 +51,7 @@ export default {
   name: 'IndexPage',
   data(){
     return {
+      atividadeCE: [],
       atividadeC1: [],
       atividadeC2: [],
       atividadeC3: [],
@@ -58,6 +62,13 @@ export default {
     }
   },
   methods: {
+    setAtividadeCE(){
+      api.getFiltered("/items/atividades", "coluna", "coluna-e", true).then(
+        response => {
+          this.atividadeCE = response.data.data
+        }
+      )
+    },
     setAtividadeC1(){
       api.getFiltered("/items/atividades", "coluna", "coluna1", true).then(
         response => {
@@ -108,6 +119,7 @@ export default {
     ColunaAtividade,
   },
   created() {
+    this.setAtividadeCE()
     this.setAtividadeC1()
     this.setAtividadeC2()
     this.setAtividadeC3()

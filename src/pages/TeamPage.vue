@@ -97,7 +97,7 @@ export default {
       )
     },
     showUsuario(id){
-      const query = "?fields=id,first_name,last_name,avatar,razao_social,funcao,sobre_mim,whatsapp,descricao_servico,email,area,email_empresarial,cpf,cnpj,rg,data_nascimento,endereco_comercial,endereco_residencial,slack,pix,ferramentas,pagamentos,passos"
+      const query = "?fields=id,first_name,last_name,avatar,razao_social,funcao,sobre_mim,whatsapp,descricao_servico,email,area,email_empresarial,cpf,cnpj,rg,data_nascimento,endereco_comercial,endereco_residencial,slack,pix,empresa,ferramentas,pagamentos,passos"
       api.getSingleUser("/users/" + id, query).then(
         response => {
           this.usuarioDetalhes = response.data.data
@@ -138,17 +138,12 @@ export default {
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 100px;
-
-/*   background-image: url("../assets/bg-main.png");
-  background-position: center;
-  background-size: cover; */
 }
 
 #team .row {
   flex-wrap: nowrap;
   gap: 20px;
 }
-
 
 @media (max-width: 1024px){
 
