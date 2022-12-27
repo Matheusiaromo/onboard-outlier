@@ -12,7 +12,7 @@
               <q-img
               class="img-card"
               placeholder-src="../assets/placeholder-cards.png"
-              :src="'https://app.omatheusdev.com/assets/' + usuario.avatar"
+              :src="'https://admin.bilhon.com/assets/' + usuario.avatar"
               >
                <template v-slot:loading>
                   <div>

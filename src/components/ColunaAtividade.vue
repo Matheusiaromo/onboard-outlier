@@ -11,7 +11,7 @@
 
               <q-img class="img-card"
               placeholder-src="../assets/placeholder-cards.png"
-              :src="'https://app.omatheusdev.com/assets/' + atividade.imagem"
+              :src="'https://admin.bilhon.com/assets/' + atividade.imagem"
               >
                 <template v-slot:loading>
                   <div>

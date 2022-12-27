@@ -13,7 +13,7 @@
 
             <img src="../assets/banner-modal-usuario.png" alt="" class="banner-modal-usuario">
             <div class="container-conteudo-modal-usuario">
-              <img class="img-modal-usuario" :src="'https://app.omatheusdev.com/assets/' + usuario.avatar" />
+              <img class="img-modal-usuario" :src="'https://admin.bilhon.com/assets/' + usuario.avatar" />
 
               <q-icon class="close-modal-usuario" v-close-popup name="close" size="30px" color="primary" />
 

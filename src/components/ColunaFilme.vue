@@ -11,7 +11,7 @@
 
               <q-img class="img-card"
               placeholder-src="../assets/placeholder-cards.png"
-              :src="'https://app.omatheusdev.com/assets/' + filme.imagem"
+              :src="'https://admin.bilhon.com/assets/' + filme.imagem"
               >
 
                 <div class="absolute-bottom text-subtitle2">

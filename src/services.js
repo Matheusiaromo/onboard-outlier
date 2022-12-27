@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-    baseURL: "https://app.omatheusdev.com"
+    /* baseURL: "https://app.omatheusdev.com" */
+    baseURL: "https://admin.bilhon.com"
 })
 
 axiosInstance.interceptors.request.use(

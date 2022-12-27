@@ -11,7 +11,7 @@
         <div class="container-img-modal-filme">
           <img
           class="img-modal-filme"
-          :src="'https://app.omatheusdev.com/assets/' + filme.imagem"
+          :src="'https://admin.bilhon.com/assets/' + filme.imagem"
           />
         </div>
 
