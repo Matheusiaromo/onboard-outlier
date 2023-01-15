@@ -322,8 +322,12 @@ export default {
   },
   filters: {
     corrigeEmpresa: function (e){
+     if(e) {
       e = e.toString().replace("_", " ").replace("Lanca", "Lança")
       return e
+     }
+
+     return "-"
 
     }
   }

@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     setUsuarioTecnologia(){
-      api.getFilter("/users", "?filter[area][_eq]=Tecnologia&filter[role]=2016dbba-a402-4bc7-85c5-7e0ba53e93f2&fields=*,ferramentas.*,ferramentas.ferramentas_id.ferramenta").then(
+      api.getFilter("/users", "?filter[area][_eq]=Tecnologia&filter[role]=2016dbba-a402-4bc7-85c5-7e0ba53e93f2&fields").then(
         response => {
           console.log(response.data.data)
           this.usuarioTecnologia = response.data.data
@@ -57,7 +57,7 @@ export default {
       )
     },
     showUsuario(id){
-      const query = "?fields=id,whatsapp,sobre_mim,nome,avatar,razao_social,funcao,descricao_servico,email,area,email_comercial,cpf,cnpj,rg,data_nascimento,endereco_comercial,endereco_residencial,slack,pix,ferramentas,pagamentos,passos"
+      const query = "?fields=id,first_name,last_name,avatar,razao_social,funcao,sobre_mim,whatsapp,descricao_servico,email,area,email_empresarial,cpf,cnpj,rg,data_nascimento,endereco_comercial,endereco_residencial,slack,pix,empresa,ferramentas,pagamentos,passos"
       api.getSingleUser("/users/" + id, query).then(
         response => {
           this.usuarioDetalhes = response.data.data

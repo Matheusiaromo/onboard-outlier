@@ -8,6 +8,7 @@ const routes = [
       { path: 'welcome', name: "welcome", meta: { login: true }, component: () => import('src/pages/WelcomePage.vue') },
       { path: 'onboarding', name: "onboarding", meta: { login: true }, component: () => import('src/pages/OnboardingPage.vue') },
       { path: 'team', name: "team", meta: { login: true }, component: () => import('src/pages/TeamPage.vue') },
+      { path: 'companies', name: "companies", meta: { login: true }, component: () => import('src/pages/CompaniesPage.vue') },
       { path: 'parttime', name: "parttime", meta: { login: true }, component: () => import('src/pages/PartTimePage.vue') },
       { path: 'movies', name: "movies", meta: { login: true }, component: () => import('src/pages/MoviesPage.vue') }
     ]

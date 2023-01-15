@@ -14,7 +14,7 @@
 
             <div class="container-conteudo-modal-atividade">
 
-              <img class="img-modal-atividade" :src="('https://app.omatheusdev.com/assets/' + atividade.imagem)" />
+              <img class="img-modal-atividade" :src="('https://admin.bilhon.com/assets/' + atividade.imagem)" />
               <q-icon class="close-modal-atividade" v-close-popup name="close" size="30px" />
 
               <h2 class="titulo-modal-atividade">{{atividade.titulo}}</h2>

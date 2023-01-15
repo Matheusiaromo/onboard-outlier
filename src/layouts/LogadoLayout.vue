@@ -16,6 +16,7 @@
           >
             <q-route-tab :to="{ name: 'welcome' }" exact replace label="Welcome" />
             <q-route-tab :to="{ name: 'onboarding' }" exact replace label="Onboarding" />
+            <q-route-tab :to="{ name: 'companies' }" exact replace label="Companies" />
             <q-route-tab v-if="isAdmin || isMembro" :to="{ name: 'team' }" exact replace label="Team" />
             <q-route-tab v-if="isAdmin || isPartime" :to="{ name: 'parttime' }" exact replace label="PartTime" />
             <q-route-tab :to="{ name: 'movies' }" exact replace label="Movies" />
