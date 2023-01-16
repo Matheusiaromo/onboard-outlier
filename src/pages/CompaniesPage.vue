@@ -4,8 +4,11 @@
    <div class="col">
       <div class="col-12 empresa-destacada">
           <img src="../assets/logo-bilhon-empresa.png" alt="">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus sit amet volutpat consequat mauris nunc congue. Pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar.</p>
-          <p>Est velit egestas dui id ornare arcu odio ut sem. Enim nulla aliquet porttitor lacus luctus accumsan tortor. Amet mattis vulputate enim nulla aliquet porttitor lacus. Morbi blandit cursus risus at ultrices mi tempus imperdiet. </p>
+          <p>Outlier, não é segredo que na nossa empresa temos produtos diversos. Além de cursos on-line, também trabalhamos com encapsulados, softwares e grupos de networking.</p>
+          <p>Para organizar todas nossas frentes de atuação temos uma empresa principal: a Bilhon.</p>
+          <p>A Bilhon é uma holding, isto é, uma empresa que detém controle de outras empresas. Esse nível de organização empresarial facilita nossos processos e prepara a empresa para mudanças e crescimento no futuro.</p>
+          <p>Hoje temos 6 empresas que estão dentro do nosso “guarda-chuva”, sendo elas: Infomakers, Suple Funnel, Finch Presenciais, Info Institute, Info Tech e Outliers Lançamentos.</p>
+          <p>Abra os cards para entender um pouco mais a fundo sobre cada uma delas.</p>
       </div>
 
       <div class="row">
@@ -75,13 +78,17 @@ export default {
   display: flex;
   flex-direction: column;
   color: #fff;
-  text-align: center;
+  text-align: left;
   align-items: center;
 
   max-width: 900px;
   margin: 0 auto;
   padding-top: 90px;
   padding-bottom: 64px;
+}
+
+.empresa-destacada p {
+  width: 100%;
 }
 
 .empresa-destacada img {
