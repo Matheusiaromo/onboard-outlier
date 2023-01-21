@@ -4,25 +4,25 @@
     <!-- <img src="../assets/bg-pages.png" alt="" class="bg-blur"> -->
 
     <div class="row justify-center" style="margin: 0 auto; max-width: 1280px">
-      <div class="col-12 col-md-2">
+      <div class="col-12 col-md-3">
           <ColunaAtividade colTitulo="Missão, visão e código" :atividades="atividadeC1" @open-modal-atividade="showAtividade" />
       </div>
 
-      <div class="col-12 col-md-2" >
+      <div class="col-12 col-md-3" >
           <ColunaAtividade colTitulo="Valores" :atividades="atividadeC2" @open-modal-atividade="showAtividade" />
       </div>
 
-      <div class="col-12 col-md-2" >
+      <div class="col-12 col-md-3" >
         <ColunaAtividade colTitulo="Primeiros passos" :atividades="atividadeC3" @open-modal-atividade="showAtividade" />
       </div>
 
-      <div class="col-12 col-md-2" >
+      <div class="col-12 col-md-3" >
         <ColunaAtividade colTitulo="Suas ferramentas" :atividades="atividadeC4" @open-modal-atividade="showAtividade" />
       </div>
 
-      <div class="col-12 col-md-2" >
+     <!--  <div class="col-12 col-md-2" >
         <ColunaAtividade colTitulo="Treinamento" :atividades="atividadeC5" @open-modal-atividade="showAtividade" />
-      </div>
+      </div> -->
 
    </div>
 
@@ -51,7 +51,7 @@ export default {
       atividadeC2: [],
       atividadeC3: [],
       atividadeC4: [],
-      atividadeC5: [],
+      /* atividadeC5: [], */ // treinamento
       showModalAtividade: false,
       atividadeDetalhes: [],
     }
@@ -85,13 +85,13 @@ export default {
         }
       )
     },
-    setAtividadeC5(){
+    /* setAtividadeC5(){
       api.getFiltered("/items/atividades", "coluna", "coluna5", true).then(
         response => {
           this.atividadeC5 = response.data.data
         }
       )
-    },
+    }, */
     showAtividade(id){
       api.get("/items/atividades/" + id).then(
         response => {
@@ -111,7 +111,7 @@ export default {
     this.setAtividadeC2()
     this.setAtividadeC3()
     this.setAtividadeC4()
-    this.setAtividadeC5()
+    /* this.setAtividadeC5() */
   }
 }
 </script>
