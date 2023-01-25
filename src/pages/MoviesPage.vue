@@ -10,7 +10,7 @@
             <q-img
               class="img-card-filme"
               placeholder-src="../assets/placeholder-cards-filmes.png"
-              :src="'https://app.omatheusdev.com/assets/' + filme.imagem"
+              :src="'https://admin.bilhon.com/assets/' + filme.imagem"
                @click="showFilmes(filme.id)"
               ></q-img>
         </div>
