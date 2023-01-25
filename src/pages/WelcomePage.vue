@@ -14,7 +14,7 @@
         </div>
         <div class="col-12 col-md-7 ">
           <video id="video" controls="controls" width="300" height="150" poster="../assets/placeholder-w.jpg">
-            <source src="https://app.omatheusdev.com/assets/0b93a178-2365-49a0-a22f-4ae52b8d06f2" type="video/mp4" />
+            <source src="https://admin.bilhon.com/assets/0b93a178-2365-49a0-a22f-4ae52b8d06f2" type="video/mp4" />
           </video>
         </div>
      </div>
