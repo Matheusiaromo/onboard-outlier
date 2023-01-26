@@ -26,7 +26,6 @@
 
    </div>
 
-
     <ModalAtividade
       :atividade="atividadeDetalhes"
       :show="showModalAtividade"

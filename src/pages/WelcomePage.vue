@@ -12,7 +12,7 @@
               <p>Estamos muito felizes em tê-la conosco. Para começarmos o seu processo de onboarding na empresa, por favor assista o vídeo ao lado.</p>
             </div>
         </div>
-        <div class="col-12 col-md-7 ">
+        <div class="col-12 col-md-7" style="border-radius: 10px; overflow: hidden;">
           <div style="position:relative;padding-top:52.81249999999999%;"><iframe id="panda-bc948d97-21ee-4cdd-b766-276e2cab8a60" src="https://player-vz-2cdebb25-226.tv.pandavideo.com.br/embed/?v=bc948d97-21ee-4cdd-b766-276e2cab8a60&preload=false" style="border:none;position:absolute;top:0;left:0;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowfullscreen=true width="100%" height="100%"></iframe></div>
         </div>
      </div>
