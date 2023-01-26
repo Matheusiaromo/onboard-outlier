@@ -13,9 +13,7 @@
             </div>
         </div>
         <div class="col-12 col-md-7 ">
-          <video id="video" controls="controls" width="300" height="150" poster="../assets/placeholder-w.jpg">
-            <source src="https://admin.bilhon.com/assets/0b93a178-2365-49a0-a22f-4ae52b8d06f2" type="video/mp4" />
-          </video>
+          <div style="position:relative;padding-top:52.81249999999999%;"><iframe id="panda-bc948d97-21ee-4cdd-b766-276e2cab8a60" src="https://player-vz-2cdebb25-226.tv.pandavideo.com.br/embed/?v=bc948d97-21ee-4cdd-b766-276e2cab8a60&preload=false" style="border:none;position:absolute;top:0;left:0;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowfullscreen=true width="100%" height="100%"></iframe></div>
         </div>
      </div>
 
@@ -38,12 +36,19 @@
   <style scoped>
 
   #welcome {
-    overflow-x: hidden;
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: calc(100vh - 106px);
+  }
+
+  #welcome .row {
+    max-width: 1280px;
+  }
+
+  @media (min-width: 1240px) {
+    #welcome .row {
+      min-width: 1280px;
+    }
   }
 
   #welcome .col-texto {

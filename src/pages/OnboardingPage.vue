@@ -126,9 +126,7 @@ export default {
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 100px;
-
   padding-top: 40px;
-
 }
 
 #onboarding .row {
