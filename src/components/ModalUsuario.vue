@@ -160,6 +160,10 @@
                 <div class="row">
                   <div class="col-12 col-md-6">
                     <div class="field-usuario">
+                      <label>Nome completo</label>
+                      <p>{{usuario.first_name}} {{usuario.last_name}}</p>
+                    </div>
+                    <div class="field-usuario">
                       <label>Data nascimento</label>
                       <p>{{usuario.data_nascimento}}</p>
                     </div>
@@ -179,10 +183,6 @@
                       <label>CNPJ</label>
                       <p>{{usuario.cnpj}}</p>
                     </div>
-                    <div class="field-usuario">
-                      <label>Empresa</label>
-                      <p>{{usuario.empresa | corrigeEmpresa}}</p>
-                    </div>
                   </div>
                   <div class="col-12 col-md-6">
                     <div class="field-usuario">
@@ -200,6 +200,10 @@
                     <div class="field-usuario">
                       <label>Whatsapp</label>
                       <p>{{usuario.whatsapp}}</p>
+                    </div>
+                    <div class="field-usuario">
+                      <label>Empresa</label>
+                      <p>{{usuario.empresa | corrigeEmpresa}}</p>
                     </div>
                   </div>
                 </div>
