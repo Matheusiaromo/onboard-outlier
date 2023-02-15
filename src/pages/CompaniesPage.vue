@@ -9,6 +9,11 @@
           <p>A Bilhon é uma holding, isto é, uma empresa que detém controle de outras empresas. Esse nível de organização empresarial facilita nossos processos e prepara a empresa para mudanças e crescimento no futuro.</p>
           <p>Hoje temos 6 empresas que estão dentro do nosso “guarda-chuva”, sendo elas: Infomakers, Suple Funnel, Finch Presenciais, Info Institute, Info Tech e Outliers Lançamentos.</p>
           <p>Abra os cards para entender um pouco mais a fundo sobre cada uma delas.</p>
+
+          <a class="icon-linkedin" href="https://www.linkedin.com/company/bilhon/mycompany/" target="_blank">
+            <img src="../assets/icon-linkedin.svg" alt="">
+          </a>
+
       </div>
 
       <div class="row">
@@ -85,6 +90,17 @@ export default {
   margin: 0 auto;
   padding-top: 90px;
   padding-bottom: 64px;
+}
+
+.icon-linkedin {
+  margin-top: 10px;
+  transform: scale(1);
+  transition: .4s;
+}
+
+.icon-linkedin:hover {
+  transform: scale(1.05);
+  transition: .3s;
 }
 
 .empresa-destacada p {
